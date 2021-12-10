@@ -1,0 +1,77 @@
+{%load static%}
+<html>
+<head>
+    <link rel='icon' href="{%static 'icon1.png' %}"" type='image/icon type'>
+    <title>Transaction Histroy</title>
+    <link rel="stylesheet" href="{%static 'table1.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head><body class="black">
+<!--if((f1.getvalue('flag')=='t')):
+    amount=int(f1.getvalue('amount'))
+    a_no=[int(f1.getvalue('sender')),int(f1.getvalue('receiver'))]
+    name=[]
+    balance=0
+    try:
+        cus.execute("select balance from customers where Account_No={}".format(a_no[0]))
+        c=cus.fetchall()
+        for i in c:
+            balance=i[0]  
+    except:
+        con.rollback()
+    for i in a_no:
+        try:
+            cus.execute("select name from customers where Account_No={};".format(i))
+            a=cus.fetchall()
+            for j in a:
+                name.append(j[0])
+        except:
+            con.rollbak() 
+    try:
+        cus.execute("insert into history (Sender_Name,Sender_NO,Receiver_Name,Receiver_no,Amount) values(%s,%s,%s,%s,%s);",(name[0],a_no[0],name[1],a_no[1],amount))
+        con.commit()
+        cus.execute("update customers set Balance=(select Balance from customers where Account_No={})-{} where Account_No={};".format(a_no[0],amount,a_no[0]))
+        con.commit()
+        cus.execute("update customers set Balance=(select Balance from customers where Account_No={})+{} where Account_No={};".format(a_no[1],amount,a_no[1]))
+        con.commit()-->
+    {%if f %} 
+    <script>
+        alert("Transaction Completed Successfully!!!");
+    </script>
+    {%endif%}
+    <h1 class="table_name">Transaction Histroy</h1>
+    <h3 id="bankname">Spark<div Style="color:#0000ff;"> Bank</div></h3>
+    <nav id="sideBox">
+        <ul>
+            <li><a href="{%url 'index' %}">HOME</a></li>
+            <li><a href="customer.html">OUR CUSTOMERS</a></li>
+            <li><a href="transaction_history.html">TRANSACTION HISTORY</a></li>
+            <li><a href="transfer.html">TRANSFER MONEY</a></li>
+            <li><a href="create_user.html">New User</a></li>
+        </ul>
+    </nav>
+    <img src="{%static 'menuicon.png'%}" id="menuBtn">
+    <script>
+        var menuBtn = document.getElementById("menuBtn");
+        var sideBox = document.getElementById("sideBox");
+        sideBox.style.right = "-250px"
+        menuBtn.onclick = function () {
+            if (sideBox.style.right == "-250px") {
+                sideBox.style.right = "0px";
+            }
+            else {
+                sideBox.style.right = "-250px";
+            }
+        }
+     </script>
+<div class="table1div">
+    <table class="table1">
+    <tr><th>From</th><th>Account_NO</th><th>To</th><th>Account_NO</th><th>Date</th><th>Amount</th></tr>
+
+{%for his in history%}
+    <tr><td>{{his.sender_name}}</td><td>{{his.sender_no}}</td><td>{{his.receiver_name}}</td><td>{{his.receiver_no}}</td><td>{{his.date}}</td><td>{{his.amount}}</td></tr>
+{%endfor%}
+</table></div>
+</body>
+<footer>&#169;Copyright 2021 Mabe by Naresh<br>
+	for the Project of The Sparks Foundation</footer>
+<\html>

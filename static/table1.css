@@ -1,0 +1,143 @@
+@media screen and (min-width:1000px){
+	h1{font-size:4rem;}
+	th{font-size:2rem;}
+	tr{font-size:1.7rem;}
+	li{font-size:1.5rem;}
+	input{font-size:2rem;}
+	select{font-size:2rem;}
+	.btn{font-size:4rem;}
+	.btn1{font-size:3rem !important;}
+	#menuBtn{width: 3rem;right: 5rem;top: 35px;}
+	#bankname{width: 3rem;left: 5rem;font-size:1.5rem;top: 0px;}
+	.transfer_button{
+	font-size:1.25rem;}
+}
+@media screen and (min-width:650px) and (max-width:1000px){
+	h1{font-size:2.8rem;}
+	th{font-size:1.4rem;}
+	tr{font-size:1.19rem;}
+	li{font-size:1.05rem;}
+	input{font-size:1.4rem;}
+	select{font-size:1.4rem;}
+	.btn{font-size:2.8rem;}
+	.btn1{font-size:2.1rem !important;}
+	#menuBtn{width: 2.1rem;right: 3.5rem;top: 30px;}
+	#bankname{width: 2.1rem;left: 3.5rem;font-size:1.05rem;top: 1.2px;}
+}
+@media screen and (min-width:520px) and (max-width:650px){	
+	#menuBtn{width: 1.7rem;right: 2.7rem;top: 25px;}
+	#bankname{width: 1.7rem;left: 2.7rem;font-size:0.75rem;top: 2.5px;}
+	input{font-size:1rem;}
+	select{font-size:1rem;}
+	.btn{font-size:2rem;}
+	.btn1{font-size:1.5rem !important;}
+}
+@media screen and (min-width:200px) and (max-width:520px){
+	h1{font-size:1.2rem;}
+	th{font-size:0.6rem;}
+	tr{font-size:0.51rem;}
+	li{font-size:0.45rem;}
+	input{font-size:0.6rem;}
+	select{font-size:0.6rem;}
+	.btn{font-size:1.2rem;}
+	.btn1{font-size:0.9rem !important;}
+    .transfer_button{font-size:0.4rem;}
+	#menuBtn{width: 0.9rem;right: 2.5rem;top:20px;}
+	#bankname{width: 0.9rem;left: 2.5rem;top:5px;font-size:0.45rem;}
+}
+h1{
+	text-align:center;
+	color:white;
+}
+.black{
+	background-color:black;
+}
+#sideBox {
+     width: 250px;
+     height: 100vh;
+     position: fixed;
+     right: -250px;
+     top: 0;
+     background: #778899;
+     z-index: 2;
+     transition: .5s
+}
+nav ul li {
+     list-style: none;
+     margin: 50px 20px;
+}
+
+nav ul li a {
+     text-decoration: none;
+     color: #fff;
+}
+
+#menuBtn {
+	 position: fixed;
+     z-index: 2;
+     cursor: pointer;
+}
+#bankname{
+	 position: absolute;     
+     z-index: 2;
+     cursor: pointer;
+	 color:white;
+}
+#transaction_table{
+     margin-left:25%;
+     margin-right:25%;
+     width:50%;
+}
+.table1{
+	margin-left:2.5%;
+	margin-right:2.5%;
+	width:95%;
+}
+th,tr,td{
+	border:2px;
+	border-collapse:collapse;
+	border-color:#FFFAFA;
+}
+
+th{
+	background-color:#0000FF;
+	text-decoration:bold;
+}
+.table1 tr:nth-child(odd){
+	background-color:#696969;
+	text-align:center;
+	color:white;	
+}
+.table1 tr:nth-child(even){
+	background-color:#808080;
+	text-align:center;
+	color:white;
+}
+.transfer_button{
+background-color:#0000ff;
+cursor:pointer;
+color:white;
+border-radius:20px;
+}
+button{
+	background-color:#0000ff;
+    cursor:pointer;
+    color:white;
+    border-radius:20px;
+}
+.footer{
+	position:absolute;
+}
+footer{
+	position:flex;
+	text-align:center;
+	color:white;
+	bottom:0;
+	width:100%;
+	font-size:60%;
+}
+.transfer_button:hover{
+        background-color:red;
+}
+		
+    

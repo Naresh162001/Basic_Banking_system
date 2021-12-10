@@ -1,0 +1,49 @@
+{% load static %}
+<html>
+<head>
+    <link rel='icon' href="{% static 'icon1.png' %}" type='image/icon type'>
+    <title>Transfer Money</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'table1.css' %}">
+</head>
+<body class="black">
+    <h1 class="table_name">Transfer Money</h1>
+    <h3 id="bankname">Spark<div Style="color:#0000ff;"> Bank</div></h3>
+    <nav id="sideBox">
+        <ul>
+            <li><a href="{% url 'index' %}">HOME</a></li>
+            <li><a href="customer.html">OUR CUSTOMERS</a></li>
+            <li><a href="transaction_history.html">TRANSACTION HISTORY</a></li>
+            <li><a href="transfer.html">TRANSFER MONEY</a></li>
+            <li><a href="create_user.html">New User</a></li>
+        </ul>
+    </nav>
+    <img src="{%static 'menuicon.png' %}" id="menuBtn">
+    <script>
+        var menuBtn = document.getElementById("menuBtn");
+        var sideBox = document.getElementById("sideBox");
+        sideBox.style.right = "-250px"
+        menuBtn.onclick = function () {
+            if (sideBox.style.right == "-250px") {
+                sideBox.style.right = "0px";
+            }
+            else {
+                sideBox.style.right = "-250px";
+            }
+        }
+     </script>
+<div class="table1div">
+<table class="table1">
+<tr><th>S.No</th><th>Name</th><th>Account_NO</th><th>Email_ID</th><th>Balance</th><th>$</tr>""")
+
+{%for n,cus in customer%}
+    <form action='transaction.html' method='post'>
+        {%csrf_token%}
+        <input type='hidden' value={{cus.account_no}} name='account_no'>
+        <tr><td>{{n}}</td><td>{{cus.name}}</td><td>{{cus.account_no}}</td><td>{{cus.email}}</td><td>{{cus.balance}}</td><td><input type='submit' class='transfer_button' value='Transfer'></tr></form>
+{%endfor%}
+</table></div>
+</body>
+<footer>&#169;Copyright 2021 Mabe by Naresh<br>
+	for the Project of The Sparks Foundation</footer>
+<html>
